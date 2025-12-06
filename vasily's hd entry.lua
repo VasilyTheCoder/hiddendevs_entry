@@ -65,7 +65,7 @@ function ServerSystemClass:_trackConnection(key: string, conn: RBXScriptConnecti
     end                                                                     -- end if new connection
 end
 
--- // internal helper: track connection for a specific server config
+-- // function to track connections for a specific server config
 
 function ServerSystemClass:_trackServerConnection(config: Configuration, key: string, conn: RBXScriptConnection?) -- track per-server connection
     if not self._serverConnections[config] then                             -- if we do not have a connection map for this server yet
@@ -644,5 +644,6 @@ function ServerSystemClass:Stop()                                           -- p
 
     self._started = false                                                   -- mark system as stopped
 end
+
 
 return ServerSystemClass                                                    -- return the class so it can be required and instantiated
